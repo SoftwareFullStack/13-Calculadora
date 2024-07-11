@@ -62,8 +62,7 @@ body{
 }
 
 .superiores{
-    /* padding: 50px 0; */
-    height: 130px;
+    height: 180px;
     
     display: flex;
     justify-content: space-around;   
@@ -156,3 +155,13 @@ body{
 }
 
 
+@media screen and (max-width: 420px){
+    .calculadora{
+        width: 340px;
+        height: 90vh;
+    }
+
+    .superiores{
+        height: 140px;   
+    }    
+}
