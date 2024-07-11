@@ -22,12 +22,12 @@ body{
 
 .calculadora{
     width: 550px;
-    height: 850px;
+    height: 95vh;
     border-radius: 20px;
     border: 1px solid #FFF;
     background-color: #F43674;
     padding: 20px;
-    margin: 0 10px;
+    margin: 20px 0;
 }
 
 .encabezado{
@@ -62,8 +62,8 @@ body{
 }
 
 .superiores{
-    padding: 50px 0;
-    height: 170px;
+    /* padding: 50px 0; */
+    height: 130px;
     
     display: flex;
     justify-content: space-around;   
@@ -154,3 +154,5 @@ body{
 .btnMas:hover{
     background-color: #00a8ce;
 }
+
+
