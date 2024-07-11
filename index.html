@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/Styles.css">
+    <link rel="shortcut icon" href="IMG/icono.png" type="image/x-icon">
+    <title>CALCULADORA</title>
+</head>
+<body>
+    <div class="calculadora">
+
+        <!-- titulo del proyecto -->
+        <div class="encabezado">
+            <p class="encabezado__titulo">Calculadora</p>
+            <img src="IMG/Logo-SVG.svg" class="encabezado__logo">
+        </div>
+
+        <!-- pantalla de la calculadora -->
+        <div class="pantalla">
+            <input type="text" class="pantalla__input" value="0" id="pantalla" readonly>
+        </div>
+
+        <!-- botones superiores de la calculadora -->
+        <div class="superiores">
+            <button class="superiores__btnCircle click" id="onLimpiar" value="CE">CE</button>
+            <button class="superiores__btnOval click" id="" value="MRC">MRC</button>
+            <button class="superiores__btnOval click" id="" value="M-">M-</button>
+            <button class="superiores__btnOval click" id="" value="M+">M+</button>
+        </div>
+
+        <!-- botones inferiores de la calculadora -->
+        <div class="inferiores">
+                <button class="btnClear" id="clear">C</button>
+                <button class="inferiores__btn click" id="rCuadrada" value="√">√</button>
+                <button class="inferiores__btn click" id="porcentaje" value="%">%</button>
+                <button class="inferiores__btn click" id="dividision" value="÷">÷</button>
+                <button class="inferiores__btn click" value="7" id="num7">7</button>
+                <button class="inferiores__btn click" value="8" id="num8">8</button>
+                <button class="inferiores__btn click" value="9" id="num9">9</button>
+                <button class="inferiores__btn click" id="multiplicacion" value="x">x</button>
+                <button class="inferiores__btn click" value="4" id="num4">4</button>
+                <button class="inferiores__btn click" value="5" id="num5">5</button>
+                <button class="inferiores__btn click" value="6" id="num6">6</button>
+                <button class="inferiores__btn click" id="resta" value="-">-</button>  
+                <button class="inferiores__btn click" value="1" id="num1">1</button>
+                <button class="inferiores__btn click" value="2" id="num2">2</button>
+                <button class="inferiores__btn click" value="3" id="num3">3</button>
+                <button class="btnMas " id="suma">+</button>
+                <button class="inferiores__btn click" value="0" id="num0">0</button>
+                <button class="inferiores__btn click" id="punto" value=".">.</button>
+                <button class="inferiores__btn " id="igual">=</button>
+        </div>
+    </div>
+
+<script src="JS/Script.js"></script>
+</body>
+</html>
