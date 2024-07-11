@@ -11,8 +11,7 @@
 
 body{
     background: radial-gradient( circle farthest-corner at 10% 20%,  rgba(33,115,130,1) 1.4%, #23277c 90% );
-    color: #FFF;
-    height: 100vh;
+    /* height: 100vh; */
     font-family: Arial, Helvetica, sans-serif;
   
     display: flex;
@@ -156,8 +155,12 @@ body{
 
 
 @media screen and (max-width: 420px){
+    body{
+        height: 90vh;
+    }
+    
     .calculadora{
-        width: 340px;
+        width: 350px;
         height: 90vh;
     }
 
@@ -165,13 +168,26 @@ body{
         height: 140px;   
     }  
     
+    .superiores__btnCircle{
+        width: 60px;
+        height: 60px;
+        margin-right: 3px;
+        font-size: 1em;
+    }
+
+    .superiores__btnOval{
+        font-size: 1em;
+        margin-right: 3px;
+    }
+    
     .inferiores__btn, .btnClear {
         width: 90%; 
         height: 60px;
         font-size: 1.5em;
     }
-
+    
     .btnMas{
         height: 130px;
+        font-size: 1.5em;
     }
 }
