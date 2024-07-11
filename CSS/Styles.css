@@ -163,5 +163,15 @@ body{
 
     .superiores{
         height: 140px;   
-    }    
+    }  
+    
+    .inferiores__btn, .btnClear {
+        width: 90%; 
+        height: 60px;
+        font-size: 1.5em;
+    }
+
+    .btnMas{
+        height: 130px;
+    }
 }
