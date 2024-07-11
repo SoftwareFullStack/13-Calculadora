@@ -11,7 +11,7 @@
 
 body{
     background: radial-gradient( circle farthest-corner at 10% 20%,  rgba(33,115,130,1) 1.4%, #23277c 90% );
-    /* height: 100vh; */
+    color: #FFF;
     font-family: Arial, Helvetica, sans-serif;
   
     display: flex;
@@ -155,10 +155,7 @@ body{
 
 
 @media screen and (max-width: 420px){
-    body{
-        height: 93vh;
-    }
-    
+      
     .calculadora{
         width: 350px;
         height: 90vh;
