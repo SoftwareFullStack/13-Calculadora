@@ -127,6 +127,23 @@ document.getElementById('punto').addEventListener('click', () => {
     }
 });
 
+document.getElementById("porcentaje").addEventListener('click', () =>{
+    console.log("Click en boton PORCENTAJE");
+    if (pantalla.value !== '0' && pantalla.value !== '') {
+        if (valorInicial !== null) {
+            let segundoValor = parseFloat(pantalla.value);
+            let porcentaje = (valorInicial * segundoValor) / 100;
+            pantalla.value = formatearNumero(porcentaje);
+            valorInicial = porcentaje;
+            operador = '';  // Reinicie el operador para garantizar que la siguiente operación se realice correctamente.
+            inicioSegundoValor = false;
+            nuevoCalculo = true;
+            operacionPendiente = true;
+        }
+    }
+});
+
+
 document.getElementById('clear').addEventListener('click', () => {
     pantalla.value = '0';
     valorInicial = null;
