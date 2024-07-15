@@ -20,7 +20,7 @@ body{
 }
 
 .calculadora{
-    width: 550px;
+    width: 40%;
     height: 93vh;
     border-radius: 20px;
     border: 1px solid #FFF;
@@ -154,11 +154,16 @@ body{
 }
 
 
-@media screen and (max-width: 420px){
+@media screen and (max-width: 576px){
       
     .calculadora{
         width: 350px;
         height: 85vh;
+    }
+
+    .pantalla__input{
+        height: 50px;
+        font-size: 3em;
     }
 
     .superiores{
@@ -166,8 +171,8 @@ body{
     }  
     
     .superiores__btnCircle{
-        width: 60px;
-        height: 60px;
+        width: 55px;
+        height: 50px;
         margin-right: 3px;
         font-size: 1em;
     }
