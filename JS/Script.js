@@ -7,16 +7,19 @@ let nuevoCalculo = false;
 let operacionPendiente = false;
 
 function formatearNumero(numero) {
-    // Primero, convertimos el input a un número si es una cadena
+    // Primero, se convierte el input a un número si es una cadena
+    console.log("Número a formatear:", numero);  
     let num = typeof numero === 'string' ? parseFloat(numero) : numero;
     
-    // Verificamos si es un número válido
+    // Se verifica si es un número válido
     if (isNaN(num)) {
+        console.error("Número inválido en formatearNumero");
         return 'Error';
     }
     
-    // Ahora podemos usar toFixed con seguridad
+    // Ahora se puede usar toFixed con seguridad
     let numeroFormateado = parseFloat(num.toFixed(10));
+    console.log("Número formateado:", numeroFormateado);
     return numeroFormateado.toString();
 }
 
@@ -144,6 +147,33 @@ document.getElementById("porcentaje").addEventListener('click', () =>{
 });
 
 
+document.getElementById("rCuadrada").addEventListener('click', () => {
+    console.log("Click en boton RAIZ CUADRADA");
+    let valorActual = parseFloat(pantalla.value);
+    
+    if (!isNaN(valorActual)) {
+        if (valorActual >= 0) { // Asegura que el valor no sea negativo
+            let raizCuadrada = Math.sqrt(valorActual);
+            console.log("Raíz cuadrada calculada:", raizCuadrada);
+            pantalla.value = formatearNumero(raizCuadrada);
+            valorInicial = raizCuadrada;
+            operador = ''; // Reinicie el operador para garantizar que la siguiente operación se realice correctamente.
+            inicioSegundoValor = false;
+            nuevoCalculo = false;
+            operacionPendiente = false;
+        } else {
+            // Maneja el caso si el valor es negativo
+            console.error("No se puede calcular la raíz cuadrada de un número negativo");
+            pantalla.value = "Error";
+        }
+    } else {
+        console.error("Valor actual no es un número válido");
+        pantalla.value = "Error";
+    }
+});
+
+
+
 document.getElementById('clear').addEventListener('click', () => {
     pantalla.value = '0';
     valorInicial = null;
@@ -153,4 +183,16 @@ document.getElementById('clear').addEventListener('click', () => {
     nuevoCalculo = false;
     operacionPendiente = false;
     console.log("Se ha reiniciado la calculadora");
+});
+
+
+document.getElementById('onLimpiar').addEventListener('click', () => {
+    console.log("Click en boton CE-(Clear Entry)");
+    
+    const limpiarEntrada = () => {
+        pantalla.value = '0';
+        operacionPendiente = false;
+    };
+    
+    limpiarEntrada();
 });
