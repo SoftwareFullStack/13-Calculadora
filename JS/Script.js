@@ -5,6 +5,8 @@ let valorPrevio = null;
 let inicioSegundoValor = false;
 let nuevoCalculo = false;
 let operacionPendiente = false;
+let memoriaValor = 0;
+
 
 function formatearNumero(numero) {
     // Primero, se convierte el input a un número si es una cadena
@@ -22,6 +24,7 @@ function formatearNumero(numero) {
     console.log("Número formateado:", numeroFormateado);
     return numeroFormateado.toString();
 }
+
 
 document.querySelectorAll('.click').forEach(boton => {
     boton.addEventListener('click', () => {
@@ -195,4 +198,91 @@ document.getElementById('onLimpiar').addEventListener('click', () => {
     };
     
     limpiarEntrada();
+});
+
+
+
+//////// BOTONES CON FUNCIONES ESPECIALES /////////
+
+document.getElementById('mr').addEventListener('click', () => {
+    console.log("Click en botón MR");
+    let memoriaRecall = () => {
+        pantalla.value = formatearNumero(memoriaValor);
+        inicioSegundoValor = true;
+        nuevoCalculo = false;
+    }
+    memoriaRecall();
+});
+
+
+document.getElementById('mc').addEventListener('click', () => {
+    console.log("Click en botón MC");
+    let memoriaClear = () => {
+        memoriaValor = 0;
+        console.log("Memoria borrada");
+    }
+    memoriaClear();
+});
+
+
+// document.getElementById('m+').addEventListener('click', () => {
+//     console.log("Click en botón M+");
+    
+//     let memoriaAdd = () => {
+//         let valorActual = parseFloat(pantalla.value);
+//         if (!isNaN(valorActual)) {
+//             memoriaValor += valorActual;
+//             console.log("Valor añadido a la memoria:", valorActual);
+//             inicioSegundoValor = true;
+//             nuevoCalculo = false;
+//         }
+//     }
+//     memoriaAdd();
+// });
+
+document.getElementById('m+').addEventListener('click', () => {
+    console.log("Click en botón M+");
+    
+    let memoriaAdd = () => {
+        let valorActual = parseFloat(pantalla.value);
+        if (!isNaN(valorActual)) {
+            memoriaValor += valorActual;
+            console.log("Valor añadido a la memoria:", valorActual);
+            console.log("Valor actual en memoria:", memoriaValor);
+            
+            // Mantener el valor actual en la pantalla
+            pantalla.value = formatearNumero(valorActual);
+            
+            inicioSegundoValor = true;
+            nuevoCalculo = true;  // Cambiado a true para preparar para un nuevo cálculo
+        } else {
+            console.log("Valor actual no es un número válido");
+            pantalla.value = '0';  // Asegurar que siempre haya un valor válido
+        }
+    }
+    memoriaAdd();
+});
+
+
+document.getElementById('m-').addEventListener('click', () => {
+    console.log("Click en botón M-");
+    
+    let memoriaSubtract = () => {
+        let valorActual = parseFloat(pantalla.value);
+        if (!isNaN(valorActual)) {
+            memoriaValor -= valorActual;
+            console.log("Valor restado del numero en memoria:", valorActual);
+            console.log("Valor actual en memoria:", memoriaValor);
+
+            // Mantener el valor actual en la pantalla
+            pantalla.value = formatearNumero(valorActual);
+
+            inicioSegundoValor = true;
+            nuevoCalculo = true; // Cambiado a true para preparar para un nuevo cálculo
+        } else {
+            console.log("Valor actual no es un número válido");
+            pantalla.value = '0';  // Asegurar que siempre haya un valor válido
+        }
+    }
+    memoriaSubtract();
 });
