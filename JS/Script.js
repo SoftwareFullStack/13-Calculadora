@@ -225,21 +225,6 @@ document.getElementById('mc').addEventListener('click', () => {
 });
 
 
-// document.getElementById('m+').addEventListener('click', () => {
-//     console.log("Click en botón M+");
-    
-//     let memoriaAdd = () => {
-//         let valorActual = parseFloat(pantalla.value);
-//         if (!isNaN(valorActual)) {
-//             memoriaValor += valorActual;
-//             console.log("Valor añadido a la memoria:", valorActual);
-//             inicioSegundoValor = true;
-//             nuevoCalculo = false;
-//         }
-//     }
-//     memoriaAdd();
-// });
-
 document.getElementById('m+').addEventListener('click', () => {
     console.log("Click en botón M+");
     
