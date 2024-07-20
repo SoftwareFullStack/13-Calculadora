@@ -258,15 +258,20 @@ document.getElementById('m-').addEventListener('click', () => {
             memoriaValor -= valorActual;
             console.log("Valor restado del numero en memoria:", valorActual);
             console.log("Valor actual en memoria:", memoriaValor);
-
+            
             // Mantener el valor actual en la pantalla
             pantalla.value = formatearNumero(valorActual);
-
+            
             inicioSegundoValor = true;
             nuevoCalculo = true; // Cambiado a true para preparar para un nuevo cálculo
         } else {
-            console.log("Valor actual no es un número válido");
-            pantalla.value = '0';  // Asegurar que siempre haya un valor válido
+            // Restar todo el valor de la memoria, efectivamente vaciándola
+            memoriaValor = 0;
+            console.log("Memoria vaciada. Nuevo valor en memoria:", pantalla.value = memoriaValor);
+
+            // No cambiamos el valor en la pantalla
+            inicioSegundoValor = true;
+            nuevoCalculo = true; // Preparar para un nuevo cálculo
         }
     }
     memoriaSubtract();
