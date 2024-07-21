@@ -225,6 +225,8 @@ document.getElementById('mc').addEventListener('click', () => {
 });
 
 
+let usandoMR = true; // Bandera para indicar si MR ha sido usado
+
 document.getElementById('m+').addEventListener('click', () => {
     console.log("Click en botón M+");
     
@@ -240,7 +242,12 @@ document.getElementById('m+').addEventListener('click', () => {
             
             inicioSegundoValor = true;
             nuevoCalculo = true;  // Cambiado a true para preparar para un nuevo cálculo
-        } else {
+        } else if(usandoMR){
+            memoriaValor += memoriaValor; // Sumar el valor de la memoria a sí mismo
+            pantalla.value
+        }
+        
+        else {
             console.log("Valor actual no es un número válido");
             pantalla.value = '0';  // Asegurar que siempre haya un valor válido
         }
